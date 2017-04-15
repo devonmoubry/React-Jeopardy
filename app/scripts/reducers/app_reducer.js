@@ -1,7 +1,14 @@
+import boardView from '../components/game_board.js'
+import startPage from '../components/start_page.js'
+
 export default function AppReducer (state, action) {
 
   if (state === undefined) {
-    return {};
+    return {
+      username: null,
+      categories: [],
+      view: startPage
+    };
   }
 
   switch (action.type) {
@@ -9,18 +16,20 @@ export default function AppReducer (state, action) {
     case "ADD_USER":
       console.log('I added a user');
       console.log(action);
-      return state;
+      var newState = {
+        username: action.username
+      };
+      return Object.assign({}, state, newState);
 
-    case "LOAD_JEOPARDY_BOARD":
-      $.ajax({
-        type: 'GET',
-        url: 'http://jservice.io/api/categories.json?count=6',
-        dataytpe: 'jsonp',
-        success: function(data, status, xhr) {
-          console.log(data);
-        }
-      });
-      
+    case "CATEGORIES_LOADED":
+      var newState = {
+        categories: action.categories,
+        view: boardView
+      };
+      return Object.assign({}, state, newState);
+
+
+
     default:
       return state;
   }

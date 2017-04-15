@@ -5,10 +5,16 @@ import container from '../containers/all.js'
 import Startpage from './start_page.js'
 
 class AppRoot extends React.Component {
+
+    constructor (props) {
+      super(props);
+    }
+
     render () {
+        let CurrentView = this.props.view;
         return (
             <main>
-                <Startpage />
+                <CurrentView />
             </main>
         );
     }

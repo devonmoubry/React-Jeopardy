@@ -11,15 +11,15 @@ class Startpage extends React.Component {
 
     handleClick (event) {
         event.preventDefault();
-        let username = this.refs.username.value;
-        this.props.dispatch(addUser(username));
+        let user = this.refs.username.value;
+        this.props.dispatch(addUser(user));
     }
 
     render() {
         return(
             <section>
                 <h1>Let’s Play!</h1>
-                <form id='username' onSubmit={this.handleClick}>
+                <form onSubmit={this.handleClick}>
                     <input ref='username' type='text' defaultValue='Devon' />
                     <input type='submit' value="Play" />
                 </form>

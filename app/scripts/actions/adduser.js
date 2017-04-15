@@ -1,6 +1,8 @@
-export default function addUser (user) {
+import getCategories from './get_categories.js';
+
+export default function addUser (username) {
   return (dispatch) => {
-    dispatch({ type: "ADD_USER", user: user });
-    dispatch({ type: "LOAD_JEOPARDY_BOARD" });
+    dispatch({ type: "ADD_USER", username: username });
+    dispatch( getCategories() );
   }
 }
