@@ -28,6 +28,24 @@ export default function AppReducer (state, action) {
       };
       return Object.assign({}, state, newState);
 
+    case "CLUES_LOADED":
+      let newCategory = action.category_with_clues;
+      let newCategories = state.categories.map(function(oldCategory) {
+        if (oldCategory.id == newCategory.id) {
+          return Object.assign({}, oldCategory, newCategory);
+        } else {
+          return oldCategory;
+        }
+      });
+
+      let newState = {
+        categories: newCategories,
+        view: boardView
+      };
+  
+
+      return Object.assign({}, state, newState);
+
 
 
     default:

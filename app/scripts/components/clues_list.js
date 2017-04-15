@@ -11,7 +11,15 @@ class CluesList extends React.Component {
     if (category.clues !== undefined && category.clues.length > 0) {
       return(
         <section>
-          <p>I have clues</p>
+          <ul>
+            {category.clues.map(function(clue) {
+              return (
+                <li key={clue.id}>
+                {clue.question}
+                </li>
+              )
+            })}
+          </ul>
         </section>
       );
     } else {
