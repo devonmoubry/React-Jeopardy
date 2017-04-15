@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import container from '../containers/all.js'
-import Startpage from './startpage.js'
+import Startpage from './start_page.js'
 
 class AppRoot extends React.Component {
     render () {

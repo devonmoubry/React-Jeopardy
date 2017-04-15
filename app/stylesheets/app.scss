@@ -3,7 +3,26 @@ html {
         margin: 0;
         padding: 0;
         background: #002894;
-        
+        font-family: 'Amatic SC', cursive;
+        text-align: center;
+    }
+    input {
+        font-family: 'Amatic SC', cursive;
+        font-size: 36px;
+        background: #002894;
+        color: #fafafa;
+        border-style: none;
+        border: 1px solid #fafafa;
+        padding: 4px;
+        margin: 6px;
+    }
+    h1 {
+        font-family: 'Fredericka the Great', cursive;
+        color: #fafafa;
+        font-size: 6rem;
     }
 }
 // #011b70
+//font-family: 'Josefin Slab', serif;
+//font-family: 'Amatic SC', cursive;
+// font-family: 'Fredericka the Great', cursive;
