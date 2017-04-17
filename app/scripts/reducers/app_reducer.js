@@ -42,11 +42,8 @@ export default function AppReducer (state, action) {
         categories: newCategories,
         view: boardView
       };
-  
 
       return Object.assign({}, state, newState);
-
-
 
     default:
       return state;

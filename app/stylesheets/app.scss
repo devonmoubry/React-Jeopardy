@@ -21,6 +21,40 @@ html {
         color: #fafafa;
         font-size: 6rem;
     }
+    h2 {
+      font-family: 'Amatic SC', cursive;
+      font-size: 36px;
+      color: #fafafa;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      font-family: 'Amatic SC', cursive;
+      font-size: 24px;
+      color: #e4e36f;
+
+    }
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    background-color: #011b70;
+    width: 800px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px;
+    border-radius:10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 // #011b70
 //font-family: 'Josefin Slab', serif;

@@ -17,7 +17,7 @@ class GameBoard extends React.Component {
           categories.map(function(category) {
             return (
               <li key={category.id}>
-                {category.title}
+                <h2>{category.title}</h2>
                 <CluesList category={category} />
               </li>
             );

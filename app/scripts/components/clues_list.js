@@ -6,6 +6,11 @@ class CluesList extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  clueClick (event) {
+    console.log('The click handler works!');
+  }
+
   render() {
     let category = this.props.category;
     if (category.clues !== undefined && category.clues.length > 0) {
@@ -15,7 +20,7 @@ class CluesList extends React.Component {
             {category.clues.map(function(clue) {
               return (
                 <li key={clue.id}>
-                {clue.question}
+                {clue.value}
                 </li>
               )
             })}
