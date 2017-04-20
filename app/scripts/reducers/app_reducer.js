@@ -7,7 +7,9 @@ export default function AppReducer (state, action) {
     return {
       username: null,
       categories: [],
-      view: startPage
+      view: startPage,
+      showModal: false,
+      currentClue: null
     };
   }
 
@@ -42,7 +44,18 @@ export default function AppReducer (state, action) {
         categories: newCategories,
         view: boardView
       };
+      return Object.assign({}, state, newState);
 
+    case "SET_CURRENT_CLUE":
+        var newState = {
+          currentClue: action.clue
+        }
+      return Object.assign({}, state, newState);
+
+    case "SHOW_MODAL":
+        var newState = {
+          showModal: true
+        }
       return Object.assign({}, state, newState);
 
     default:

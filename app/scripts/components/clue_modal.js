@@ -16,12 +16,20 @@ class ClueModal extends React.Component {
     }
   }
 
+  submitAnswer() {
+    console.log('submitAnswer');
+  }
+
+  pass() {
+    console.log('pass');
+  }
+
   render() {
     return(
       <section className={'modal-container'}>
         <div className={'modal'}>
-          <h2>{category.title}</h2>
-          <h2>{clue.question}</h2>
+
+          <h2>{this.props.clue.question}</h2>
           <input id='contestantAnswer' type='text' placeholder='answer' />
           <button onClick={this.submitAnswer}>Submit Answer</button>
           <button onClick={this.pass}>Pass</button>
