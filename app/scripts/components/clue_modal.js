@@ -5,19 +5,19 @@ import container from '../containers/all.js'
 class ClueModal extends React.Component {
   constructor(props) {
     super(props);
+
+    this.submitAnswer = this.submitAnswer.bind(this);
   }
 
-  answer (event) {
-    event.preventDefault();
-    if (event.target.elements.contestantAnswer === clue.answer) {
+  submitAnswer(event) {
+    event.preventDefault;
+    const contestantAnswer = this.refs.contestantAnswer.value;
+    const correctAnswer = this.props.clue.answer;
+    if (contestantAnswer.toUpperCase() === correctAnswer.toUpperCase()) {
       console.log('mo money');
     } else {
       console.log('no mo money');
     }
-  }
-
-  submitAnswer() {
-    console.log('submitAnswer');
   }
 
   pass() {
@@ -30,8 +30,8 @@ class ClueModal extends React.Component {
         <div className={'modal'}>
 
           <h2>{this.props.clue.question}</h2>
-          <input id='contestantAnswer' type='text' placeholder='answer' />
-          <button onClick={this.submitAnswer}>Submit Answer</button>
+          <input ref='contestantAnswer' id='contestantAnswer' type='text' placeholder='answer' />
+          <button type='submit' onClick={this.submitAnswer}>Submit Answer</button>
           <button onClick={this.pass}>Pass</button>
         </div>
       </section>
