@@ -9,7 +9,7 @@ export default function app() {
   render(
     <Provider store={store}>
       <Router>
-        <div>
+        <div className="jeopardy-container">
           <Route path="/" component={JeopardyAppRoot}/>
         </div>
       </Router>

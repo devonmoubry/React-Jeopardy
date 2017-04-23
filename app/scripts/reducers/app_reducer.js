@@ -9,7 +9,8 @@ export default function AppReducer (state, action) {
       categories: [],
       view: startPage,
       showModal: false,
-      currentClue: null
+      currentClue: null,
+      viewedClues: []
     };
   }
 
@@ -55,6 +56,14 @@ export default function AppReducer (state, action) {
         var newState = {
           showModal: true
         }
+      return Object.assign({}, state, newState);
+
+    case "VIEWED_CLUE":
+      var clue = action.clue;
+      var newState = {
+        showModal: false,
+        viewedClues: state.viewedClues.concat([clue])
+      }
       return Object.assign({}, state, newState);
 
     default:

@@ -7,6 +7,7 @@ class Clue extends React.Component {
         super(props);
 
         this.clueClick = this.clueClick.bind(this);
+        this.isClueViewed = this.isClueViewed.bind(this);
     }
 
     clueClick (e) {
@@ -15,12 +16,35 @@ class Clue extends React.Component {
       this.props.dispatch({ type: "SHOW_MODAL" });
     }
 
+    isClueViewed(clue) {
+      let clueViewed = false;
+      this.props.viewedClues.forEach(function(viewedClue) {
+        if (viewedClue == clue) {
+          clueViewed = true;
+        }
+      });
+      return clueViewed;
+    }
+
+    //isClueViewed(clue) answeredClues.forEach
+       //if
+    //return true else return false
     render() {
-        return(
-            <li >
-            <a href="#" onClick={this.clueClick}>{this.props.clue.value}</a>
+        if (this.isClueViewed(this.props.clue) == true) {
+          console.log('rendering viewed');
+          return(
+              <li className="jeopardy-values">
+              <a className="jeopardy-value-viewed" href="#" onClick={this.clueClick}>VIEWED</a>
+              </li>
+          )
+        } else {
+          console.log('rendering value');
+          return (
+            <li className="jeopardy-values">
+            <a className="jeopardy-value" href="#" onClick={this.clueClick}>${this.props.clue.value}</a>
             </li>
-        );
+          )
+        }
     }
 }
 export default connect(container.allState)(Clue)

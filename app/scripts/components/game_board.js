@@ -19,13 +19,13 @@ class GameBoard extends React.Component {
     }
 
     return(
-      <section>
-        <ul>
+      <section className="game-board">
+        <ul className="category">
           {
             categories.map(function(category) {
               return (
-                <li key={category.id}>
-                  <h2>{category.title}</h2>
+                <li className="category-list" key={category.id}>
+                  <h2 className="jeopardy-h2">{category.title}</h2>
                   <CluesList category={category} />
                 </li>
               );
