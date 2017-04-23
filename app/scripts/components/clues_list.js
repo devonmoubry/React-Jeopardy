@@ -24,7 +24,7 @@ class CluesList extends React.Component {
     if (category.clues !== undefined && category.clues.length > 0) {
       return(
         <section className="clues-list-section">
-          <ul className="clues-list-ul">
+          <ul className="clues-list">
             { this.cluesListItems(category.clues) }
           </ul>
         </section>

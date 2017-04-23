@@ -26,15 +26,12 @@ class Clue extends React.Component {
       return clueViewed;
     }
 
-    //isClueViewed(clue) answeredClues.forEach
-       //if
-    //return true else return false
     render() {
         if (this.isClueViewed(this.props.clue) == true) {
           console.log('rendering viewed');
           return(
               <li className="jeopardy-values">
-              <a className="jeopardy-value-viewed" href="#" onClick={this.clueClick}>VIEWED</a>
+              <p className="jeopardy-value-viewed">VIEWED</p>
               </li>
           )
         } else {

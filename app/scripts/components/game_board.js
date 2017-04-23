@@ -9,7 +9,6 @@ class GameBoard extends React.Component {
     super(props);
   }
 
-
   render() {
     let categories = this.props.categories;
 
@@ -19,21 +18,29 @@ class GameBoard extends React.Component {
     }
 
     return(
-      <section className="game-board">
-        <ul className="category">
-          {
-            categories.map(function(category) {
-              return (
-                <li className="category-list" key={category.id}>
-                  <h2 className="jeopardy-h2">{category.title}</h2>
-                  <CluesList category={category} />
-                </li>
-              );
-            })
-          }
-        </ul>
+      <section className="jeopardy-play-view">
+          <section className="game-board">
+            <ul className="category">
+              {
+                categories.map(function(category) {
+                  return (
+                    <li className="category-list" key={category.id}>
+                      <h2 className="jeopardy-h2">{category.title}</h2>
+                      <CluesList category={category} />
+                    </li>
+                  );
+                })
+              }
+            </ul>
 
-        { clueModal }
+            { clueModal }
+          </section>
+          <section className="scoreboard">
+            <h1 className="correct-answer-title">Correct Answer</h1>
+            <div className="correct-answer">{this.props.correctAnswer}</div>
+            <h1 className="scoreboard-title">Contestant Score</h1>
+            <div className="jeopardy-score">${this.props.contestantScore}</div>
+          </section>
       </section>
     );
   }

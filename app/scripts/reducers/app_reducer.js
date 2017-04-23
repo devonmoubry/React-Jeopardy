@@ -10,7 +10,9 @@ export default function AppReducer (state, action) {
       view: startPage,
       showModal: false,
       currentClue: null,
-      viewedClues: []
+      viewedClues: [],
+      contestantScore: 0,
+      correctAnswer: ''
     };
   }
 
@@ -60,9 +62,25 @@ export default function AppReducer (state, action) {
 
     case "VIEWED_CLUE":
       var clue = action.clue;
+      let answerFeedback = action.clue.answer;
       var newState = {
         showModal: false,
-        viewedClues: state.viewedClues.concat([clue])
+        viewedClues: state.viewedClues.concat([clue]),
+        correctAnswer: answerFeedback
+      }
+      return Object.assign({}, state, newState);
+
+    case "HANDLE_CORRECT_ANSWER":
+      let momoney = action.value
+      var newState = {
+        contestantScore: state.contestantScore + momoney
+      }
+      return Object.assign({}, state, newState);
+
+    case "HANDLE_INCORRECT_ANSWER":
+      let lessmoney = action.value
+      var newState = {
+        contestantScore: state.contestantScore - lessmoney
       }
       return Object.assign({}, state, newState);
 
