@@ -3,16 +3,14 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import AppRoot from './components/app_root.js'
-import About from './components/about.js'
+import JeopardyAppRoot from './components/jeopardy_app_root.js'
 
 export default function app() {
   render(
     <Provider store={store}>
       <Router>
         <div>
-          <Route path="/"      component={AppRoot}/>
-          <Route path="/about" component={About} />
+          <Route path="/" component={JeopardyAppRoot}/>
         </div>
       </Router>
     </Provider>,

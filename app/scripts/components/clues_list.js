@@ -23,7 +23,7 @@ class CluesList extends React.Component {
     let category = this.props.category;
     if (category.clues !== undefined && category.clues.length > 0) {
       return(
-        <section>
+        <section className="clues-list">
           <ul>
             { this.cluesListItems(category.clues) }
           </ul>

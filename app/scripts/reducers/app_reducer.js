@@ -39,7 +39,6 @@ export default function AppReducer (state, action) {
           return oldCategory;
         }
       });
-
       let newState = {
         categories: newCategories,
         view: boardView

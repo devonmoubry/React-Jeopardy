@@ -17,7 +17,7 @@ class Startpage extends React.Component {
 
     render() {
         return(
-            <section>
+            <section className="start-section">
                 <h1>Let’s Play!</h1>
                 <form onSubmit={this.handleClick}>
                     <input ref='username' type='text' defaultValue='Devon' />

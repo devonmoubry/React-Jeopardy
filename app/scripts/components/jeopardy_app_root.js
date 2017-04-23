@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import container from '../containers/all.js'
 import Startpage from './start_page.js'
 
-class AppRoot extends React.Component {
+class JeopardyAppRoot extends React.Component {
 
     constructor (props) {
       super(props);
@@ -20,4 +20,4 @@ class AppRoot extends React.Component {
     }
 }
 
-export default connect(container.allState)(AppRoot)
+export default connect(container.allState)(JeopardyAppRoot)
