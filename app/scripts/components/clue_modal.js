@@ -34,7 +34,7 @@ class ClueModal extends React.Component {
     return(
       <section className={'modal-container'}>
         <div className={'modal'}>
-          <h2 className="jeopardy-h2">{this.props.clue.question}</h2>
+          <h2 className="jeopardy-modal-title">{this.props.clue.question}</h2>
           <input autoFocus className="jeopardy-input" ref='contestantAnswer' id='contestantAnswer' type='text' placeholder='answer' />
           <button className="jeopardy-input" type='submit' onClick={this.submitAnswer}>Submit Answer</button>
           <button className="jeopardy-input" onClick={this.pass}>Pass</button>
