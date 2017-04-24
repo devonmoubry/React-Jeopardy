@@ -20,7 +20,7 @@ class Startpage extends React.Component {
             <section className="start-section">
                 <h1 className="jeopardy-h1">Let’s Play!</h1>
                 <form onSubmit={this.handleClick}>
-                    <input className="jeopardy-input" ref='username' type='text' defaultValue='Devon' />
+                    <input className="jeopardy-input" ref='username' type='text' />
                     <input className="jeopardy-input" type='submit' value="Play" />
                 </form>
             </section>
